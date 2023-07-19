@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:store_ui/home_page/package.dart';
 
-import 'package:store_ui/home_page/widgets/gridview_item_widget.dart';
-import 'package:store_ui/home_page/widgets/drawers.dart';
-import 'package:store_ui/home_page/widgets/top_app.dart';
 import 'package:store_ui/modern/home_item.dart';
 import 'package:store_ui/utils/appColor.dart';
 import 'package:store_ui/utils/appIcon.dart';
 import 'package:store_ui/utils/appImage.dart';
 
-import '../utils/appIcon.dart';
+import '../package.dart';
+import '../widgets/gridview_item_widget.dart';
+import '../widgets/top_app.dart';
+
+
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);

@@ -18,5 +18,7 @@ class AppIcon{
   static const String pitichka='assets/svg_picture/piticka_Icon.svg';
   static const String bag='assets/svg_picture/bag.svg';
   static const String heart_2='assets/svg_picture/heart_2.svg';
+  static const String home='assets/svg_picture/home.svg';
+
 
 }

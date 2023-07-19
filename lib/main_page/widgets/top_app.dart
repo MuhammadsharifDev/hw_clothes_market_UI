@@ -10,9 +10,10 @@ class TopApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Row(
+
       children: [
         SizedBox(
-          height: 45,
+          height: 55,
           width: 285,
           child: TextField(
             decoration: InputDecoration(

@@ -82,31 +82,44 @@ class HomeItem {
         imageItem:AppImages.picture_6,
         firma: 'Nike Sportswear Club \nFleece',
         coast: '\$99',
-        isLike: false),
+        isLike: true),
     HomeItem(
         imageItem:AppImages.picture_5,
         firma: 'Trail Running Jacket Nike Windrunner',
         coast: '\$80',
-        isLike: false),
+        isLike: true),
     HomeItem(
         imageItem:AppImages.picture_4,
         firma: 'Trail Running Jacket Nike Windrunner',
         coast: '\$80',
-        isLike: false),
+        isLike: true),
     HomeItem(
         imageItem:AppImages.picture_3,
         firma: 'Trail Running Jacket Nike Windrunner',
         coast: '\$80',
-        isLike: false),
+        isLike: true),
     HomeItem(
         imageItem:AppImages.picture_2,
         firma: 'Trail Running Jacket Nike Windrunner',
         coast: '\$80',
-        isLike: false),
+        isLike: true),
     HomeItem(
         imageItem:AppImages.picture_1,
         firma: 'Trail Running Jacket Nike Windrunner',
         coast: '\$80',
-        isLike: false),
+        isLike: true),
+  ];
+}
+class NikesPictures{
+  String image;
+  NikesPictures({required this.image});
+
+
+  static List<NikesPictures> nikeItem=[
+    NikesPictures(image: AppImages.nike1_),
+    NikesPictures(image: AppImages.nike2_),
+    NikesPictures(image: AppImages.nike3_),
+    NikesPictures(image: AppImages.nike4_),
+
   ];
 }
