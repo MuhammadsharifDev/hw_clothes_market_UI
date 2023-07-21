@@ -46,6 +46,7 @@ class _ButtomNagPageState extends State<ButtomNagPage> {
                 BottomNavigationBarItem(icon: SvgPicture.asset(AppIcon.heart_2),label:'Like' ),
                 BottomNavigationBarItem(icon: SvgPicture.asset(AppIcon.bag),label: 'Bag' ),
                 BottomNavigationBarItem(icon: SvgPicture.asset(AppIcon.walletIcon),label: 'Wallet' ),
+
               ],
               unselectedItemColor: Colors.grey,
               selectedItemColor:AppColor.C_9775FA,

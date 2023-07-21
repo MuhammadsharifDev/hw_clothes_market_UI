@@ -12,6 +12,7 @@ class BagPage extends StatefulWidget {
 }
 
 class _BagPageState extends State<BagPage> {
+  List<String>item=['S','M','XL','2XL'];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -182,55 +183,22 @@ class _BagPageState extends State<BagPage> {
                   ),
                   SizedBox(
                     height: 77,
-                    child:ListView(
-                      scrollDirection: Axis.horizontal,
-                      children: [
-                        Container(
-
+                    child: SizedBox(
+                      height: 80,
+                      child: ListView.separated(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: item.length,
+                        itemBuilder:(context, index) => Container(
                           width: 80,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
-                            color:AppColor.C_F5F6FA,
+                            color: AppColor.C_F5F6FA,
                           ),
-                          child:const Center(child: Text('S',style: TextStyle(fontWeight: FontWeight.w600,fontSize: 17,color: AppColor.C_1D1E20),)),
-                        ),
-                        const SizedBox(
-                          width: 10,
-                        ),
-                        Container(
-
-                          width: 80,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color:AppColor.C_F5F6FA,
-                          ),
-                          child:const Center(child: Text('M',style: TextStyle(fontWeight: FontWeight.w600,fontSize: 17,color: AppColor.C_1D1E20),)),
-                        ),
-                        const SizedBox(
-                          width: 10,
-                        ),
-                        Container(
-
-                          width: 80,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color:AppColor.C_F5F6FA,
-                          ),
-                          child: const Center(child: Text('XL',style: TextStyle(fontWeight: FontWeight.w600,fontSize: 17,color: AppColor.C_1D1E20),)),
-                        ),
-                        const SizedBox(
-                          width: 10,
-                        ),
-                        Container(
-
-                          width: 80,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color:AppColor.C_F5F6FA,
-                          ),
-                          child: const Center(child: Text('2XL',style: TextStyle(fontWeight: FontWeight.w600,fontSize: 17,color: AppColor.C_1D1E20),)),
-                        ),
-                      ],
+                          child: Center(child: Text(item[index])),
+                        ), separatorBuilder: (BuildContext context, int index) {
+                        return SizedBox(width: 10,);
+                      },
+                      ),
                     ),
                   ),
 
@@ -242,6 +210,7 @@ class _BagPageState extends State<BagPage> {
                     padding: const EdgeInsets.only(right: 50),
                     child: Text('The Nike Throwback Pullover Hoodie is made \nfrom premium French terry fabric that blends a \nperformance feel with Read More..'),
                   ),
+
                 ],
               ),
             ),

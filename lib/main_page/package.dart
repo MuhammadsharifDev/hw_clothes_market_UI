@@ -9,6 +9,7 @@ class Drawers extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final data=ModalRoute.of(context)?.settings.arguments as Map;
     return ListView(
       children: [
         DrawerHeader(
@@ -40,15 +41,13 @@ class Drawers extends StatelessWidget {
                       AssetImage('assets/png_picture/user_profile.png'),
                       radius: 28,
                     ),
-                    const SizedBox(
-                      width: 15,
-                    ),
+          SizedBox(width: 10,),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text(
-                          'Hemendra',
-                          style: TextStyle(
+                         Text(
+                          data['name'],
+                          style:const  TextStyle(
                             color: AppColor.C_1D1E20,
                             fontSize: 20,
                             fontWeight: FontWeight.w600,
@@ -61,20 +60,11 @@ class Drawers extends StatelessWidget {
                             SvgPicture.asset(AppIcon.pitichka),
                           ],
                         ),
+                        Text("ID:${data['password']}",style: TextStyle(color: Colors.grey),),
                       ],
                     ),
-                    const SizedBox(
-                      width: 25,
-                    ),
-                    Container(
-                      height: 40,
-                      width: 60,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5),
-                        color: Colors.grey.withOpacity(0.4),
-                      ),
-                      child: Center(child: Text('3 Orders')),
-                    ),
+
+
                   ],
                 ),
               ],

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:store_ui/main_page/home_page/homepage.dart';
+import 'package:store_ui/main_page/main_page_first.dart';
 
 
 
@@ -15,7 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: ButtomNagPage(),
+      home:LoginPage(),
     );
   }
 }
