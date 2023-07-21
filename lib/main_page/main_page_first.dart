@@ -72,7 +72,7 @@ bool isPasswordValidate=false;
                   },
                   controller: userNameController,
                   decoration: InputDecoration(
-                    suffixIcon: isValidate ? Icon(Icons.check) : null,
+                    suffixIcon: isValidate ? Icon(Icons.check,color: Colors.green,) : null,
                     labelText: 'Username',
                   ),
                   onChanged: (value){
@@ -98,7 +98,7 @@ bool isPasswordValidate=false;
                     }
                   },
                   onChanged: (value) {
-                    if(value.length>8){
+                    if(value.length>7){
                       setState(() {
                         isPasswordValidate=true;
                       });
@@ -111,10 +111,10 @@ bool isPasswordValidate=false;
                   },
                   controller: passwordController,
                   //passwordController
-                  obscureText: false,
+                  obscureText: true,
                   // initialValue: 'HJ@#9783kja',
                   decoration:  InputDecoration(
-                    suffixIcon: isPasswordValidate? Icon(Icons.password_sharp) : null,
+                    suffixIcon: isPasswordValidate? Text('Strong',style: TextStyle(color: Colors.green),) : null,
                     labelText: 'Password',
                   ),
                 ),
@@ -177,6 +177,7 @@ bool isPasswordValidate=false;
                 width: double.infinity,
                 child: ElevatedButton(
                     onPressed: () {
+
                       if (_formkey.currentState!.validate()) {
                         if (userNameController.text.isNotEmpty &&
                             passwordController.text.isNotEmpty) {

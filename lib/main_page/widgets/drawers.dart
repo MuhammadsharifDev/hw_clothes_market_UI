@@ -10,7 +10,7 @@ class dDrawer extends StatelessWidget {
         child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[
-         const    DrawerHeader(
+         const DrawerHeader(
               decoration: BoxDecoration(
                 color: Colors.blue,
               ),
@@ -25,15 +25,14 @@ class dDrawer extends StatelessWidget {
             ListTile(
               leading: Icon(Icons.settings),
               title: Text('Settings'),
-              onTap: () {
-                // TODO: Implement settings screen
-              },
+
+              
             ),
             ListTile(
               leading: Icon(Icons.help),
               title: Text('Help'),
               onTap: () {
-                // TODO: Implement help screen
+
               },
             ),
           ],

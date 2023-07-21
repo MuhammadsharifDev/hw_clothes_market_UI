@@ -1,25 +1,35 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:store_ui/main_page/home_page/homepage.dart';
+import 'package:store_ui/modern/home_item.dart';
 import 'package:store_ui/utils/appColor.dart';
 import 'package:store_ui/utils/appIcon.dart';
 import 'package:store_ui/utils/appImage.dart';
 
 class BagPage extends StatefulWidget {
-  const BagPage({super.key});
+
+  const BagPage({super.key,});
 
   @override
   State<BagPage> createState() => _BagPageState();
 }
 
 class _BagPageState extends State<BagPage> {
+  final _pageController=PageController();
   List<String>item=['S','M','XL','2XL'];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
-            leading: Icon(Icons.arrow_back_ios_new),
+            leading: IconButton(
+              onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen(),));
+              },
+              icon: Icon(Icons.arrow_back_ios_new),
+            ),
             actions: [
               CircleAvatar(
                 radius: 20,
@@ -27,30 +37,31 @@ class _BagPageState extends State<BagPage> {
                 child: SvgPicture.asset(AppIcon.bag),
               ),
             ],
-            expandedHeight: 387,
+            expandedHeight: 450,
             pinned: true,
             flexibleSpace: FlexibleSpaceBar(
-              background: Stack(
-                fit: StackFit.expand,
+              background:
+              PageView(
+                controller: _pageController,
                 children: [
                   Image.asset(
                     'assets/png_picture/picture_5.jpg',
                     fit: BoxFit.cover,
                   ),
-                  Container(
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
-                        colors: [
-                          Colors.transparent,
-                          Colors.black.withOpacity(0.8),
-                        ],
-                      ),
-                    ),
+                  Image.asset(
+                    'assets/png_picture/nike2.jpg',
+                    fit: BoxFit.cover,
                   ),
+                  Image.asset(
+                    'assets/png_picture/nike3.jpg',
+                    fit: BoxFit.cover,
+                  ),
+                  Image.asset('assets/png_picture/nike4.jpg',fit: BoxFit.cover,),
+
                 ],
               ),
+
+
             ),
           ),
           SliverToBoxAdapter(
@@ -101,59 +112,19 @@ class _BagPageState extends State<BagPage> {
                   ),
                   SizedBox(
                     height: 77,
-                    child: Expanded(
-                      child: Row(
-                        children: [
-                          Container(
-
-                            width: 77,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              image:const DecorationImage(
-                                image: AssetImage('assets/png_picture/nike1.jpg'),
-                                fit: BoxFit.fill,
-                              ),
-                            ),
+                    child: ListView.separated(
+                      scrollDirection: Axis.horizontal,
+                      itemBuilder: (context, index) {
+                        return Container(
+                          width:80,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(12),
                           ),
-                         const SizedBox(width: 9,),
-                          Container(
-                            height: 77,
-                            width: 77,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              image: const DecorationImage(
-                                image: AssetImage('assets/png_picture/nike2.jpg'),
-                                fit: BoxFit.fill,
-                              ),
-                            ),
-                          ),
-                          const SizedBox(width: 9,),
-                          Container(
-                            height: 77,
-                            width: 77,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              image: const DecorationImage(
-                                image: AssetImage('assets/png_picture/nike3.jpg'),
-                                fit: BoxFit.fill,
-                              ),
-                            ),
-                          ),
-                          const SizedBox(width: 9,),
-                          Container(
-                            height: 77,
-                            width: 77,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              image: const DecorationImage(
-                                image: AssetImage('assets/png_picture/nike4.jpg'),
-                                fit: BoxFit.fill,
-                              ),
-                            ),
-                          ),
-
-                        ],
-                      ),
+                          child: Image.asset(ImagesNike.nikeItem[index].image),
+                        );
+                      },
+                      separatorBuilder: (context, index) => SizedBox(width: 10,),
+                      itemCount: ImagesNike.nikeItem.length,
                     ),
                   ),
                   const SizedBox(
@@ -202,11 +173,11 @@ class _BagPageState extends State<BagPage> {
                     ),
                   ),
 
-                 const Padding(
+                  const Padding(
                     padding: const EdgeInsets.only(right: 250,top: 20),
                     child: const Text('Description',style: TextStyle(fontWeight: FontWeight.w600,fontSize: 17,color: AppColor.C_1D1E20),),
                   ),
-                 const Padding(
+                  const Padding(
                     padding: const EdgeInsets.only(right: 50),
                     child: Text('The Nike Throwback Pullover Hoodie is made \nfrom premium French terry fabric that blends a \nperformance feel with Read More..'),
                   ),
@@ -220,4 +191,16 @@ class _BagPageState extends State<BagPage> {
       ),
     );
   }
+}
+class ImagesNike{
+  String image;
+  ImagesNike({required this.image});
+
+  static List<ImagesNike> nikeItem=[
+    ImagesNike(image: AppImages.nike1),
+    ImagesNike(image: AppImages.nike2),
+    ImagesNike(image: AppImages.nike3),
+    ImagesNike(image: AppImages.nike4),
+
+  ];
 }

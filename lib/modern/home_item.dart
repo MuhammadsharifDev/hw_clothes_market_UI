@@ -110,16 +110,5 @@ class HomeItem {
         isLike: true),
   ];
 }
-class NikesPictures{
-  String image;
-  NikesPictures({required this.image});
 
 
-  static List<NikesPictures> nikeItem=[
-    NikesPictures(image: AppImages.nike1_),
-    NikesPictures(image: AppImages.nike2_),
-    NikesPictures(image: AppImages.nike3_),
-    NikesPictures(image: AppImages.nike4_),
-
-  ];
-}

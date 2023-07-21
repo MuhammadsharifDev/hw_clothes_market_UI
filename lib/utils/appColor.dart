@@ -10,5 +10,4 @@ class AppColor{
   static const Color C_EA4335=Color(0xffEA4335);
 
 
-
 }
